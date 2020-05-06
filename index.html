@@ -17,10 +17,12 @@
 <script type="text/javascript" async src="http://localhost:8080/build/rdstation-popup.min.js" ></script>
     
 <script type="text/javascript">
-    var account_token = '82890e42be6df8514d31b17756d4634a';
-    var account_id = 50244;
-    var ga_track_code = '';
-    RdstationPopup.init(account_token, account_id, ga_track_code);
+    window.addEventListener('load', (event) => {
+        var account_token = '82890e42be6df8514d31b17756d4634a';
+        var account_id = 50244;
+        var ga_track_code = '';
+        RdstationPopup.init(account_token, account_id, ga_track_code);
+    });
 </script>    
     
    
