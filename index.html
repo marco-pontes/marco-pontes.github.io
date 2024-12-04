@@ -25,13 +25,8 @@
         }
     </style>
 
-    <script src="/public/js/webpush-client.min.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-    webpushClient.init({
-        webpushAccountId: 1,
-    })
-</script>
+    <script src="/public/js/webpush-client.min.js"></script>
+
 </head>
 <body class="container-fluid">
     <div class="row">    
@@ -83,12 +78,17 @@
           <iframe src="https://gamespot.com"></iframe> -->
     </div>
   </div>
-    
+
 <div class="row">  
     <div class="footer .col-xs-12 .col-sm-6 .col-lg-8">
         Footer
     </div>
 </div>
+        <script>
+            webpushClient.init({
+                webpushAccountId: 1,
+            })
+        </script>
     </body>
 
 </html>
