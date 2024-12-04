@@ -24,6 +24,16 @@
             height:100px;
         }
     </style>
+
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+<script>
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "e759da7e-439d-44ed-bd02-322580215222",
+    });
+  });
+</script>
 </head>
 <body class="container-fluid">
     <div class="row">    
