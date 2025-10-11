@@ -8,7 +8,7 @@
       rgba(variables.$color-primary-light, 0.8),
       rgba(variables.$color-primary-dark, 0.8)
     ),
-    url("../../img/hero-small.jpg");
+    url("../../assets/images/hero-small.jpg");
   background-size: cover;
   background-position: top;
   position: relative;
@@ -27,7 +27,7 @@
         rgba(variables.$color-primary-light, 0.8),
         rgba(variables.$color-primary-dark, 0.8)
       ),
-      url("../../img/hero.jpg");
+      url("../../assets/images/hero.jpg");
   }
 
   @include mixins.query(phone) {

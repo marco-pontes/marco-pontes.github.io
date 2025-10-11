@@ -18,7 +18,7 @@
       rgba(variables.$color-primary-light, 0.8),
       rgba(variables.$color-primary-dark, 0.8)
     ),
-    url("../../img/nat-4.jpg");
+    url("../../assets/images/nat-4.jpg");
   background-size: cover;
   transform: skewY(-7deg);
   margin-top: -10rem;
@@ -67,7 +67,7 @@
       rgba(variables.$color-white, 0.9) 50%,
       transparent 50%
     ),
-    url("../../img/nat-10.jpg");
+    url("../../assets/images/nat-10.jpg");
   background-size: cover; //same as 100%
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba(variables.$color-black, 0.2);
@@ -79,7 +79,7 @@
         rgba(variables.$color-white, 0.9) 65%,
         transparent 65%
       ),
-      url("../../img/nat-10.jpg");
+      url("../../assets/images/nat-10.jpg");
   }
 
   @include mixins.query(tab-port) {
@@ -88,7 +88,7 @@
         rgba(variables.$color-white, 0.9) 0%,
         rgba(variables.$color-white, 0.9) 100%
       ),
-      url("../../img/nat-10.jpg");
+      url("../../assets/images/nat-10.jpg");
   }
 
   &__form {

@@ -30,7 +30,7 @@ jobs:
         run: npm ci
 
       - name: Build
-        run: npm run build:css   # React build outputs to `build/` by default
+        run: npm run build   # React build outputs to `dist/` by default
 
       - name: Configure Pages
         id: pages-setup
@@ -40,7 +40,7 @@ jobs:
         id: upload-artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./build     # test
+          path: ./dist     # test
 
   deploy:
     needs: build
