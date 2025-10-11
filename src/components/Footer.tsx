@@ -1,8 +1,8 @@
 import reactLogo from "../assets/images/react.svg";
 import logoGreenSmall1x from "../assets/images/logo-green-small-1x.png";
 import logoGreenSmall2x from "../assets/images/logo-green-small-2x.png";
-import logoGreen1x from "../assets/images/logo-green-1x.png";
-import logoGreen2x from "../assets/images/logo-green-2x.png";
+import logoWhite1x from "../assets/images/logo-white-1x.png";
+import logoWhite2x from "../assets/images/logo-white-2x.png";
 
 import viteLogo from "/vite.svg";
 
@@ -16,10 +16,10 @@ export const Footer = () => {
 						media="(max-width: 37.5em)"
 					/>
 					<img
-						srcSet={`${logoGreen1x} 1x, ${logoGreen2x} 2x`}
+						srcSet={`${logoWhite1x} 1x, ${logoWhite2x} 2x`}
 						alt="Full logo"
 						className="footer__logo"
-						src={logoGreen2x}
+						src={logoWhite2x}
 					/>
 				</picture>
 				<div>

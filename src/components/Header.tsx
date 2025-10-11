@@ -8,9 +8,9 @@ export const Header = () => {
 			</div>
 			<div className="header__text-box">
 				<h1 className="heading-primary">
-					<span className="heading-primary&#45;&#45;main">Viva Pixel</span>
+					<span className="heading-primary&#45;&#45;main">VPix</span>
 					<span className="heading-primary&#45;&#45;sub">
-						is where life happens
+						Smart Software Development
 					</span>
 				</h1>
 				<a
