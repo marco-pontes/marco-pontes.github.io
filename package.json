@@ -15,7 +15,7 @@
     "concat:css": "concat -o ./build/css/style.concat.css ./build/css/style.comp.css ./build/css/icon-font.css",
     "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' ./build/css/style.concat.css -o ./build/css/style.prefix.css",
     "compress:css": "sass ./build/css/style.prefix.css ./build/css/style.css",
-    "build:css": "npm-run-all copy:index compile:sass copy:css, copy:images concat:css prefix:css compress:css"
+    "build:css": "npm-run-all copy:index compile:sass copy:css copy:images concat:css prefix:css compress:css"
   },
   "author": "Marco",
   "license": "ISC",
