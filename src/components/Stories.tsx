@@ -1,10 +1,15 @@
+import videoMp4 from "../assets/images/video.mp4";
+import videoWebm from "../assets/images/video.webm";
+import nat8 from "../assets/images/nat-8.jpg";
+import nat9 from "../assets/images/nat-9.jpg";
+
 export const Stories = () => {
 	return (
 		<section className="section-stories">
 			<div className="bg-video">
 				<video className="bg-video__content" autoPlay muted loop>
-					<source src="src/assets/images/video.mp4" type="video/mp4" />
-					<source src="src/assets/images/video.webm" type="video/webm" />
+					<source src={videoMp4} type="video/mp4" />
+					<source src={videoWebm} type="video/webm" />
 					Your browser is not supported
 				</video>
 			</div>
@@ -14,11 +19,7 @@ export const Stories = () => {
 			<div className="row">
 				<div className="story">
 					<figure className="story__shape">
-						<img
-							className="story__image"
-							src="src/assets/images/nat-8.jpg"
-							alt="Person on a tour"
-						/>
+						<img className="story__image" src={nat8} alt="Person on a tour" />
 						<figcaption className="story__caption">Mary Smith</figcaption>
 					</figure>
 					<div className="story__text">
@@ -38,11 +39,7 @@ export const Stories = () => {
 			<div className="row">
 				<div className="story">
 					<figure className="story__shape">
-						<img
-							className="story__image"
-							src="src/assets/images/nat-9.jpg"
-							alt="Person on a tour"
-						/>
+						<img className="story__image" src={nat9} alt="Person on a tour" />
 						<figcaption className="story__caption">Jack Wilson</figcaption>
 					</figure>
 					<div className="story__text">
