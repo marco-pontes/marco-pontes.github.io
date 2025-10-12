@@ -1,21 +1,23 @@
-export const Popup = () => {
+import type { FunctionComponent } from "@/types/types.ts";
+
+export const Modal = (): FunctionComponent => {
 	return (
 		<div className="popup" id="popup">
 			<div className="popup__content">
 				<div className="popup__left">
 					<img
-						src="src/assets/images/nat-8.jpg"
 						alt="Tour photo"
 						className="popup__img"
+						src="src/assets/images/nat-8.jpg"
 					/>
 					<img
-						src="src/assets/images/nat-9.jpg"
 						alt="Tour photo"
 						className="popup__img"
+						src="src/assets/images/nat-9.jpg"
 					/>
 				</div>
 				<div className="popup__right">
-					<a href="#section-tours" className="popup__close">
+					<a className="popup__close" href="#section-tours">
 						&times;
 					</a>
 					<h2 className="heading_secondary u-margin-bottom-small">
@@ -34,7 +36,7 @@ export const Popup = () => {
 						omnis, quia quisquam quos, sed veniam vero. Lorem ipsum dolor sit
 						amet, consectetur adipisicing elit.
 					</p>
-					<a href="#" className="btn btn--green">
+					<a className="btn btn--green" href="#">
 						Book now
 					</a>
 				</div>

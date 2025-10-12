@@ -1,4 +1,6 @@
-export const Contact = () => {
+import type { FunctionComponent } from "@/types/types.ts";
+
+export const Contact = (): FunctionComponent => {
 	return (
 		<section className="section-book">
 			<div className="row">
@@ -10,26 +12,26 @@ export const Contact = () => {
 							</div>
 							<div className="form__group">
 								<input
-									id="name"
-									type="text"
-									className="form__input"
-									placeholder="Full name"
 									required
+									className="form__input"
+									id="name"
+									placeholder="Full name"
+									type="text"
 								/>
-								<label htmlFor="name" className="form__label">
+								<label className="form__label" htmlFor="name">
 									Full name
 								</label>
 							</div>
 
 							<div className="form__group">
 								<input
-									id="email"
-									type="email"
-									className="form__input"
-									placeholder="Email address"
 									required
+									className="form__input"
+									id="email"
+									placeholder="Email address"
+									type="email"
 								/>
-								<label htmlFor="email" className="form__label">
+								<label className="form__label" htmlFor="email">
 									Email address
 								</label>
 							</div>
@@ -37,24 +39,24 @@ export const Contact = () => {
 							<div className="form__group u-margin-bottom-medium">
 								<div className="form__radio-group">
 									<input
-										type="radio"
 										className="form__radio-input"
 										id="small"
 										name="size"
+										type="radio"
 									/>
-									<label htmlFor="small" className="form__radio-label">
+									<label className="form__radio-label" htmlFor="small">
 										<span className="form__radio-button"></span>
 										Small tour group
 									</label>
 								</div>
 								<div className="form__radio-group">
 									<input
-										type="radio"
 										className="form__radio-input"
 										id="large"
 										name="size"
+										type="radio"
 									/>
-									<label htmlFor="large" className="form__radio-label">
+									<label className="form__radio-label" htmlFor="large">
 										<span className="form__radio-button"></span>
 										Large tour group
 									</label>
@@ -69,4 +71,4 @@ export const Contact = () => {
 			</div>
 		</section>
 	);
-}
+};

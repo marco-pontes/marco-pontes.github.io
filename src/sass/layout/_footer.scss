@@ -18,11 +18,19 @@
     @include mixins.query(tab-port) {
       margin-bottom: 6rem;
     }
+
+    .tech-logos {
+      display: inline;
+      vertical-align: initial;
+    }
+
   }
 
   &__logo {
     width: 15rem;
     height: auto;
+    display: inline;
+    vertical-align: initial;
   }
 
   &__navigation {

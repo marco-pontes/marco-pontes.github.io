@@ -1,5 +1,3 @@
-import type { ReactNode } from "react";
-
 export type FunctionComponent = React.ReactElement | null;
 
 export enum AlertType {
@@ -10,6 +8,19 @@ export enum AlertType {
 }
 export type AlertProps = { type: AlertType; message: string };
 
-export type MainLayoutProps = {
-	children: ReactNode;
+export enum TodoStatus {
+	PENDING = "PENDING",
+	COMPLETED = "COMPLETED",
+}
+
+export type Todo = {
+	id: number;
+	title: string;
+	description: string;
+	status: TodoStatus;
+};
+
+export type FetchResponse = {
+	totalResults: number;
+	todos: Array<Todo>;
 };

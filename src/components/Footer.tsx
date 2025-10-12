@@ -5,29 +5,30 @@ import logoWhite1x from "../assets/images/logo-white-1x.png";
 import logoWhite2x from "../assets/images/logo-white-2x.png";
 
 import viteLogo from "/vite.svg";
+import type { FunctionComponent } from "@/types/types.ts";
 
-export const Footer = () => {
+export const Footer = (): FunctionComponent => {
 	return (
 		<footer className="footer">
 			<div className="footer__logo-box">
 				<picture className="footer__logo">
 					<source
-						srcSet={`${logoGreenSmall1x} 1x, ${logoGreenSmall2x} 2x`}
 						media="(max-width: 37.5em)"
+						srcSet={`${logoGreenSmall1x} 1x, ${logoGreenSmall2x} 2x`}
 					/>
 					<img
-						srcSet={`${logoWhite1x} 1x, ${logoWhite2x} 2x`}
 						alt="Full logo"
 						className="footer__logo"
 						src={logoWhite2x}
+						srcSet={`${logoWhite1x} 1x, ${logoWhite2x} 2x`}
 					/>
 				</picture>
 				<div>
 					<a href="https://vite.dev" target="_blank">
-						<img src={viteLogo} className="logo" alt="Vite logo" />
+						<img alt="Vite logo" className="tech-logos" src={viteLogo} />
 					</a>
 					<a href="https://react.dev" target="_blank">
-						<img src={reactLogo} className="logo react" alt="React logo" />
+						<img alt="React logo" className="tech-logos" src={reactLogo} />
 					</a>
 				</div>
 			</div>
@@ -36,27 +37,27 @@ export const Footer = () => {
 					<div className="footer__navigation">
 						<ul className="footer__list">
 							<li className="footer__item">
-								<a href="#" className="footer__link">
+								<a className="footer__link" href="#">
 									Company
 								</a>
 							</li>
 							<li className="footer__item">
-								<a href="#" className="footer__link">
+								<a className="footer__link" href="#">
 									Contact us
 								</a>
 							</li>
 							<li className="footer__item">
-								<a href="#" className="footer__link">
+								<a className="footer__link" href="#">
 									Careers
 								</a>
 							</li>
 							<li className="footer__item">
-								<a href="#" className="footer__link">
+								<a className="footer__link" href="#">
 									Privacy policy
 								</a>
 							</li>
 							<li className="footer__item">
-								<a href="#" className="footer__link">
+								<a className="footer__link" href="#">
 									Terms
 								</a>
 							</li>
@@ -66,20 +67,20 @@ export const Footer = () => {
 				<div className="col-1-of-2">
 					<p className="footer__copyright">
 						Built by
-						<a href="https://github.com/marco-pontes/" className="footer__link">
+						<a className="footer__link" href="https://github.com/marco-pontes/">
 							Marco Pontes
 						</a>{" "}
 						for practicing
 						<a
-							href="https://github.com/marco-pontes/advanced-css-practice"
 							className="footer__link"
+							href="https://github.com/marco-pontes/advanced-css-practice"
 						>
 							CSS
 						</a>
 						. Copyright &copy; by
 						<a
-							href="https://github.com/jonasschmedtmann"
 							className="footer__link"
+							href="https://github.com/jonasschmedtmann"
 						>
 							Jonas Schmedtmann
 						</a>

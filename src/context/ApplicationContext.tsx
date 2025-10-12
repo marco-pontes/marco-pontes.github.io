@@ -4,41 +4,19 @@ import {
 	type FunctionComponent,
 	type ReactNode,
 	useState,
-	type Dispatch,
-	type SetStateAction,
 	useRef,
 } from "react";
-import { useUpdateTodo } from "@/features/todos/hooks/useUpdateTodo";
-import type { UseMutateFunction } from "@tanstack/react-query";
-import type { Todo } from "@/features/todos/types/todo.ts";
-import { useTodoList } from "@/features/todos/hooks/useTodoList";
-import { useDeleteTodo } from "@/features/todos/hooks/useDeleteTodo";
-import { useCreateTodo } from "@/features/todos/hooks/useCreateTodo";
-import { AlertType } from "@/types/types.ts";
-import { useTranslation } from "react-i18next";
+import { useTodoList } from "@//hooks/useTodoList";
+import type { AlertType, Todo } from "@/types/types.ts";
+// import { useTranslation } from "react-i18next";
 
 type MessageType = { type: AlertType; message: string };
 export type ApplicationContextType = {
-	mutateUpdate: UseMutateFunction<Response, Error, Partial<Todo>>;
-	mutateCreate: UseMutateFunction<Response, Error, Partial<Todo>>;
-	mutateDelete: UseMutateFunction<Response, Error, number>;
-	isPending: boolean;
-	isPendingCreate: boolean;
-	editModalOpen: boolean;
-	setEditModalOpen: Dispatch<SetStateAction<boolean>>;
-	setActiveEditTodo: Dispatch<SetStateAction<Partial<Todo> | undefined>>;
-	activeEditTodo: Partial<Todo> | undefined;
-	handleUpdateTodo: (todo: Partial<Todo>) => void;
-	handleEditTodo: (todo: Todo) => void;
+	//mutateUpdate: UseMutateFunction<Response, Error, Partial<Todo>>;
 	message: MessageType | null;
 	addMessage: (message: MessageType, duration?: number) => void;
 	todos: Array<Todo> | undefined;
 	isLoadingTodos: boolean;
-	selection: Array<number>;
-	setSelection: Dispatch<SetStateAction<Array<number>>>;
-	page: number;
-	setPage: Dispatch<SetStateAction<number>>;
-	totalResults: number | undefined;
 };
 
 const ApplicationContext = createContext<ApplicationContextType | undefined>(
@@ -53,18 +31,15 @@ type ApplicationProviderProps = {
 export const ApplicationProvider: FunctionComponent<
 	ApplicationProviderProps
 > = ({ children, overrideValues }) => {
-	const [page, setPage] = useState<number>(1);
-	const [activeEditTodo, setActiveEditTodo] = useState<Partial<Todo>>();
 	const [editModalOpen, setEditModalOpen] = useState<boolean>(false);
 
-	const { t } = useTranslation();
+	// const { t } = useTranslation();
 	const {
 		data,
 		isLoading: isLoadingTodos,
 		isError: isErrorLoadingTodos,
-	} = useTodoList(page);
+	} = useTodoList(1);
 
-	const [selection, setSelection] = useState<Array<number>>([]);
 	const timeoutIdRef = useRef<NodeJS.Timeout | null>(null);
 	const [message, setMessage] = useState<MessageType | null>(null);
 
@@ -79,68 +54,22 @@ export const ApplicationProvider: FunctionComponent<
 		}, duration);
 	};
 
-	const successCreatedFn = (): void => {
-		addMessage({
-			type: AlertType.success,
-			message: t("todos.messages.created"),
-		});
-	};
+	// const successCreatedFn = (): void => {
+	// 	addMessage({
+	// 		type: AlertType.success,
+	// 		message: t("todos.messages.created"),
+	// 	});
+	// };
 
-	const successUpdatedFn = (): void => {
-		addMessage({
-			type: AlertType.success,
-			message: t("todos.messages.updated"),
-		});
-	};
-
-	const successDeletedFn = (): void => {
-		addMessage({
-			type: AlertType.success,
-			message: t("todos.messages.deleted"),
-		});
-	};
-
-	const { mutate: mutateCreate, isPending: isPendingCreate } =
-		useCreateTodo(successCreatedFn);
-
-	const { mutate: mutateUpdate, isPending: isPendingUpdate } =
-		useUpdateTodo(successUpdatedFn);
-
-	const { mutate: mutateDelete, isPending: isPendingDelete } =
-		useDeleteTodo(successDeletedFn);
-
-	const isPending = isPendingUpdate || isPendingDelete || isLoadingTodos;
-
-	const handleUpdateTodo = (todo: Partial<Todo>): void => {
-		mutateUpdate(todo);
-		setEditModalOpen(false);
-	};
-
-	const handleEditTodo = (todo: Todo): void => {
-		setActiveEditTodo({ ...todo });
-		setEditModalOpen(true);
-	};
+	const isPending = isLoadingTodos;
 
 	const contextValue = {
-		page,
-		setPage,
-		activeEditTodo,
-		setActiveEditTodo,
 		editModalOpen,
 		setEditModalOpen,
-		todos: data?.todos,
-		totalResults: data?.totalResults,
 		message,
-		selection,
-		setSelection,
-		handleUpdateTodo,
-		handleEditTodo,
-		mutateUpdate,
-		mutateDelete,
-		mutateCreate,
 		isErrorLoadingTodos,
 		isPending,
-		isPendingCreate,
+		todos: data?.todos,
 		isLoadingTodos,
 		addMessage,
 	};

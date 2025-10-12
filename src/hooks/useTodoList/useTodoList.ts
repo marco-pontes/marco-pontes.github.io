@@ -1,7 +1,7 @@
 import { useQuery, type UseQueryResult } from "@tanstack/react-query";
 import { API_ENDPOINTS, QUERY_KEYS } from "@/common/constants.ts";
 import { httpClient } from "@/common/http-client.ts";
-import type { FetchResponse, Todo } from "../../types/todo.ts";
+import type { FetchResponse, Todo } from "@/types/types.ts";
 
 async function fetchTodos(
 	page: number,

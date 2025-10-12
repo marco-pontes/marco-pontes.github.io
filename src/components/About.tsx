@@ -4,8 +4,9 @@ import nat2 from "../assets/images/nat-2.jpg";
 import nat2Large from "../assets/images/nat-2-large.jpg";
 import nat3 from "../assets/images/nat-3.jpg";
 import nat3Large from "../assets/images/nat-3-large.jpg";
+import type { FunctionComponent } from "@/types/types.ts";
 
-export const About = () => {
+export const About = (): FunctionComponent => {
 	return (
 		<section className="section-about">
 			<div className="u-center-text u-margin-bottom-big">
@@ -35,32 +36,32 @@ export const About = () => {
 						inventore labore!
 					</p>
 
-					<a href="#" className="btn-text">
+					<a className="btn-text" href="#">
 						Learn more &rarr;
 					</a>
 				</div>
 				<div className="col-1-of-2">
 					<div className="composition">
 						<img
-							srcSet={`${nat1} 300w, ${nat1Large} 1000w`}
-							sizes="(max-width: 37.5em) 20vw, (max-width: 56.25em) 30vw, 300px"
-							src={nat1Large}
 							alt="Photo 1"
 							className="composition__photo composition__photo&#45;&#45;p1"
+							sizes="(max-width: 37.5em) 20vw, (max-width: 56.25em) 30vw, 300px"
+							src={nat1Large}
+							srcSet={`${nat1} 300w, ${nat1Large} 1000w`}
 						/>
 						<img
-							srcSet={`${nat2} 300w, ${nat2Large} 1000w`}
-							sizes="(max-width: 37.5em) 20vw, (max-width: 56.25em) 30vw, 300px"
-							src={nat2Large}
 							alt="Photo 2"
 							className="composition__photo composition__photo&#45;&#45;p2"
+							sizes="(max-width: 37.5em) 20vw, (max-width: 56.25em) 30vw, 300px"
+							src={nat2Large}
+							srcSet={`${nat2} 300w, ${nat2Large} 1000w`}
 						/>
 						<img
-							srcSet={`${nat3} 300w, ${nat3Large} 1000w`}
-							sizes="(max-width: 37.5em) 20vw, (max-width: 56.25em) 30vw, 300px"
-							src={nat3Large}
 							alt="Photo 3"
 							className="composition__photo composition__photo&#45;&#45;p3"
+							sizes="(max-width: 37.5em) 20vw, (max-width: 56.25em) 30vw, 300px"
+							src={nat3Large}
+							srcSet={`${nat3} 300w, ${nat3Large} 1000w`}
 						/>
 					</div>
 				</div>

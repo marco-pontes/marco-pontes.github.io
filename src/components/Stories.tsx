@@ -2,24 +2,26 @@ import videoMp4 from "../assets/images/video.mp4";
 import videoWebm from "../assets/images/video.webm";
 import nat8 from "../assets/images/nat-8.jpg";
 import nat9 from "../assets/images/nat-9.jpg";
+import { t } from "i18next";
+import type { FunctionComponent } from "@/types/types.ts";
 
-export const Stories = () => {
+export const Stories = (): FunctionComponent => {
 	return (
 		<section className="section-stories">
 			<div className="bg-video">
-				<video className="bg-video__content" autoPlay muted loop>
+				<video autoPlay loop muted className="bg-video__content">
 					<source src={videoMp4} type="video/mp4" />
 					<source src={videoWebm} type="video/webm" />
 					Your browser is not supported
 				</video>
 			</div>
 			<div className="u-center-text u-margin-bottom-big">
-				<h2 className="heading-secondary">We make people genuinely happy</h2>
+				<h2 className="heading-secondary">{t("stories.title")}</h2>
 			</div>
 			<div className="row">
 				<div className="story">
 					<figure className="story__shape">
-						<img className="story__image" src={nat8} alt="Person on a tour" />
+						<img alt="Person on a tour" className="story__image" src={nat8} />
 						<figcaption className="story__caption">Mary Smith</figcaption>
 					</figure>
 					<div className="story__text">
@@ -39,7 +41,7 @@ export const Stories = () => {
 			<div className="row">
 				<div className="story">
 					<figure className="story__shape">
-						<img className="story__image" src={nat9} alt="Person on a tour" />
+						<img alt="Person on a tour" className="story__image" src={nat9} />
 						<figcaption className="story__caption">Jack Wilson</figcaption>
 					</figure>
 					<div className="story__text">
@@ -57,7 +59,7 @@ export const Stories = () => {
 				</div>
 			</div>
 			<div className="u-center-text u-margin-top-huge">
-				<a href="#" className="btn-text">
+				<a className="btn-text" href="#">
 					Read all stories &rarr;
 				</a>
 			</div>

@@ -1,4 +1,6 @@
-export const SectionFeatures = () => {
+import type { FunctionComponent } from "@/types/types.ts";
+
+export const SectionFeatures = (): FunctionComponent => {
 	return (
 		<section className="section-features">
 			<div className="row">

@@ -3,7 +3,7 @@ import { renderHook, waitFor } from "@testing-library/react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { useTodoList } from "./useTodoList.ts";
 import { API_ENDPOINTS } from "@/common/constants.ts";
-import type { Todo } from "@/features/todos/types/todo.ts";
+import type { Todo } from "@/types/types.ts";
 
 const get = vi.fn();
 vi.mock(
@@ -143,9 +143,7 @@ describe("useTodoList", () => {
 	});
 
 	it("aborts in-flight request via AbortSignal when unmounted", () => {
-
 		const page = 1;
-
 
 		let resolveJson: (value: unknown) => void = () => {};
 		const jsonPromise = new Promise((resolveFn) => {
@@ -161,14 +159,17 @@ describe("useTodoList", () => {
 
 		const { unmount } = renderHook(() => useTodoList(page), { wrapper });
 
-
 		expect(get).toHaveBeenCalledTimes(1);
-		const firstCall = get.mock.calls[0] as [string, { signal?: unknown }] | undefined;
+		const firstCall = get.mock.calls[0] as
+			| [string, { signal?: unknown }]
+			| undefined;
 		const options = firstCall?.[1];
-		expect(options && typeof options === "object" && "signal" in (options as object)).toBe(true);
+		expect(
+			options && typeof options === "object" && "signal" in (options as object)
+		).toBe(true);
 
 		unmount();
-		
+
 		resolveJson([]);
 	});
 });
