@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import type { Client } from "@marco-pontes/simple-fake-api/http";
+import type { Client } from "@vivid-front/http";
 
 describe("httpClient singleton", () => {
 	beforeEach(() => {

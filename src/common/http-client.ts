@@ -1,4 +1,4 @@
-import { type Client, create } from "@marco-pontes/simple-fake-api/http";
+import { type Client, create } from "@vivid-front/http";
 
 // Singleton client instance
 let cachedClient: Client | null = null;
