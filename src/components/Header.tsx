@@ -1,6 +1,6 @@
 import logoWhite from "../assets/images/logo-white.png";
-import logoWhite1x from "../assets/images/logo-white-1x.png";
-import logoWhite2x from "../assets/images/logo-white-2x.png";
+import logoWhite1x from "../assets/images/vivid-white-1x.png";
+import logoWhite2x from "../assets/images/vivid-white-2x.png";
 import type { FunctionComponent } from "@/types/types.ts";
 
 export const Header = (): FunctionComponent => {
