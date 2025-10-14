@@ -1,6 +1,6 @@
 import reactLogo from "../assets/images/react.svg";
-import logoGreenSmall1x from "../assets/images/logo-red-small-1x.png";
-import logoGreenSmall2x from "../assets/images/logo-red-small-2x.png";
+import logoGreenSmall1x from "../assets/images/logo-side-yellow-1x.png";
+import logoGreenSmall2x from "../assets/images/logo-side-yellow-2x.png";
 import logoWhite1x from "../assets/images/vivid-white-1x.png";
 import logoWhite2x from "../assets/images/vivid-white-2x.png";
 

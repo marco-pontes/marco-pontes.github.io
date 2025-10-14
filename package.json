@@ -10,7 +10,7 @@
     "format": "prettier \"src/**/*.{ts,tsx}\" --write",
     "lint": "eslint src --ext .ts,.tsx",
     "lint:fix": "eslint --max-warnings 0 --fix",
-    "dev": "vite",
+    "dev": "concurrently 'vite' 'fake-api'",
     "start": "concurrently 'vite' 'simple-fake-api'",
     "test": "vitest run src/ && playwright test",
     "test:unit": "vitest src/",
@@ -31,13 +31,13 @@
     "react-dom": "^19.1.1",
     "react-i18next": "^16.0.0",
     "react-icons": "^5.5.0",
-    "@vivid-front/http": "^1.4.5"
+    "@vivid-front/http": "^1.5.2"
   },
   "devDependencies": {
     "@eslint/compat": "^1.4.0",
     "@eslint/js": "^9.37.0",
-    "@vivid-front/fake-api": "^1.4.5",
-    "@vivid-front/bundler": "^1.4.5",
+    "@vivid-front/fake-api": "^1.5.5",
+    "@vivid-front/bundler": "^1.5.2",
     "@playwright/test": "^1.56.0",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.0",
