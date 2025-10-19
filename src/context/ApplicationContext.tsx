@@ -6,15 +6,18 @@ import {
 	useState,
 } from "react";
 
-export type AppContextType =
+export type ApplicationContextType =
 	| undefined
 	| {
 			is: boolean;
 	  };
 
-const AppContext = createContext<AppContextType>(undefined);
+const AppContext = createContext<ApplicationContextType>(undefined);
 
-type AppProviderProps = { children: ReactNode };
+type AppProviderProps = {
+	children: ReactNode;
+	overrideValues?: Partial<ApplicationContextType>;
+};
 export const ApplicationProvider: FunctionComponent<AppProviderProps> = ({
 	children,
 }) => {
@@ -25,7 +28,7 @@ export const ApplicationProvider: FunctionComponent<AppProviderProps> = ({
 	return <AppContext.Provider value={value}>{children}</AppContext.Provider>;
 };
 
-export const useAppContext = (): AppContextType => {
+export const useAppContext = (): ApplicationContextType => {
 	const context = useContext(AppContext);
 	if (context === undefined) {
 		throw new Error("Use inside context provider!");
