@@ -1,32 +1,35 @@
-import logoWhite from "../assets/images/logo-white-2x.png";
-import logoWhite1x from "../assets/images/vivid-white-1x.png";
-import logoWhite2x from "../assets/images/vivid-white-2x.png";
-import type { FunctionComponent } from "@/types/types.ts";
+import Image from "next/image";
+import React from "react";
+import { FunctionComponent } from "@/types/types";
 
 export const Header = (): FunctionComponent => {
 	return (
 		<header className="header">
 			<div className="header__logo-box">
-				<img alt="Logo" className="header__logo" src={logoWhite} />
+				<Image
+					className="header__logo"
+					src="/images/logo-4x.png"
+					width={37}
+					height={35}
+					alt="Logo"
+					priority
+				/>
 			</div>
 			<div className="header__text-box">
 				<h1 className="heading-primary">
-					<span className="heading-primary&#45;&#45;main">
-						<img
+					<span className="heading-primary--main">
+						<Image
 							alt="Full logo"
-							className="footer__logo"
-							src={logoWhite2x}
-							srcSet={`${logoWhite1x} 1x, ${logoWhite2x} 2x`}
+							src="/images/marco-aurelio-4x.png"
+							width={500}
+							height={150}
 						/>
 					</span>
-					<span className="heading-primary&#45;&#45;sub">
+					<span className="heading-primary--sub">
 						Smart Software Development
 					</span>
 				</h1>
-				<a
-					className="btn btn&#45;&#45;white btn&#45;&#45;animated"
-					href="#section-tours"
-				>
+				<a className="btn btn--white btn--animated" href="#section-tours">
 					Discover our software
 				</a>
 			</div>

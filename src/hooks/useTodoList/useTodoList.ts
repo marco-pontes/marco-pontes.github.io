@@ -1,15 +1,13 @@
 import { useQuery, type UseQueryResult } from "@tanstack/react-query";
-import { API_ENDPOINTS, QUERY_KEYS } from "@/common/constants.ts";
-import { httpClient } from "@/common/http-client.ts";
 import type { FetchResponse, Todo } from "@/types/types.ts";
+import { API_ENDPOINTS, QUERY_KEYS } from "@/common/constants";
 
 async function fetchTodos(
 	page: number,
 	limit: number,
 	signal?: AbortSignal
 ): Promise<FetchResponse> {
-	const api = httpClient();
-	const response: Response = await api.get(API_ENDPOINTS.TODOS(page, limit), {
+	const response: Response = await fetch(API_ENDPOINTS.TODOS(page, limit), {
 		signal,
 	});
 	const jsonResponse = (await response.json()) as Array<Todo>;

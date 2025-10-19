@@ -1,4 +1,4 @@
-import type { FunctionComponent } from "@/types/types.ts";
+import { FunctionComponent } from "@/types/types";
 
 export const NavBar = (): FunctionComponent => {
 	return (

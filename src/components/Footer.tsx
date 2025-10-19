@@ -1,34 +1,60 @@
-import reactLogo from "../assets/images/react.svg";
-import logoGreenSmall1x from "../assets/images/logo-side-yellow-1x.png";
-import logoGreenSmall2x from "../assets/images/logo-side-yellow-2x.png";
-import logoWhite1x from "../assets/images/vivid-white-1x.png";
-import logoWhite2x from "../assets/images/vivid-white-2x.png";
-
-import viteLogo from "/vite.svg";
-import type { FunctionComponent } from "@/types/types.ts";
+import Image from "next/image";
+import React from "react";
+import { FunctionComponent } from "@/types/types";
 
 export const Footer = (): FunctionComponent => {
 	return (
 		<footer className="footer">
+			<div
+				style={{
+					display: "flex",
+					flexDirection: "row",
+					gap: "20px",
+					width: "959px",
+					flexWrap: "wrap",
+				}}
+			></div>
 			<div className="footer__logo-box">
 				<picture className="footer__logo">
 					<source
 						media="(max-width: 37.5em)"
-						srcSet={`${logoGreenSmall1x} 1x, ${logoGreenSmall2x} 2x`}
+						srcSet={`/images/logo-side-1x.png 1x, /images/logo-side-2x.png 2x`}
 					/>
-					<img
+					<Image
 						alt="Full logo"
 						className="footer__logo"
-						src={logoWhite2x}
-						srcSet={`${logoWhite1x} 1x, ${logoWhite2x} 2x`}
+						src="/images/marco-logo-white-4x.png"
+						width={200}
+						height={200}
 					/>
 				</picture>
 				<div>
 					<a href="https://vite.dev" target="_blank">
-						<img alt="Vite logo" className="tech-logos" src={viteLogo} />
+						<Image
+							alt="Vite logo"
+							className="tech-logos"
+							src="/images/vite.svg"
+							width={36}
+							height={32}
+						/>
 					</a>
 					<a href="https://react.dev" target="_blank">
-						<img alt="React logo" className="tech-logos" src={reactLogo} />
+						<Image
+							alt="React logo"
+							className="tech-logos"
+							src="images/react.svg"
+							width={36}
+							height={32}
+						/>
+					</a>
+					<a href="https://nextjs.org/" target="_blank">
+						<Image
+							alt="Next logo"
+							className="tech-logos"
+							src="images/next.svg"
+							width={36}
+							height={32}
+						/>
 					</a>
 				</div>
 			</div>

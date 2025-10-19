@@ -12,9 +12,9 @@ export const Contact = (): FunctionComponent => {
 							</div>
 							<div className="form__group">
 								<input
-									required
 									className="form__input"
 									id="name"
+									name="name"
 									placeholder="Full name"
 									type="text"
 								/>
@@ -25,9 +25,9 @@ export const Contact = (): FunctionComponent => {
 
 							<div className="form__group">
 								<input
-									required
 									className="form__input"
 									id="email"
+									name="email"
 									placeholder="Email address"
 									type="email"
 								/>
