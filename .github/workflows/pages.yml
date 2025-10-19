@@ -40,7 +40,7 @@ jobs:
         id: upload-artifact
         uses: actions/upload-pages-artifact@v4
         with:
-          path: ./dist     # test
+          path: .next    # test
 
   deploy:
     needs: build
