@@ -6,7 +6,7 @@ import {
 	useState,
 } from "react";
 
-type AppContextType =
+export type AppContextType =
 	| undefined
 	| {
 			is: boolean;
@@ -15,7 +15,7 @@ type AppContextType =
 const AppContext = createContext<AppContextType>(undefined);
 
 type AppProviderProps = { children: ReactNode };
-export const AppProvider: FunctionComponent<AppProviderProps> = ({
+export const ApplicationProvider: FunctionComponent<AppProviderProps> = ({
 	children,
 }) => {
 	const [is, setIs] = useState(false);
