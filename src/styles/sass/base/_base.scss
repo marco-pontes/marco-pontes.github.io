@@ -1,0 +1,39 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+
+  @include mixins.query(tab-land) {
+    font-size: 56.25%;
+  }
+
+  @include mixins.query(tab-port) {
+    font-size: 50%;
+  }
+
+  @include mixins.query(big-desktop) {
+    font-size: 75%;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  padding: 3rem;
+  @include mixins.query(tab-port) {
+    padding: 0;
+  }
+}
+
+::selection {
+  background-color: variables.$color-primary;
+  color: variables.$color-white;
+}

@@ -1,0 +1,46 @@
+{
+  "todos": {
+    "messages": {
+      "updated": "Successfully updated the task!",
+      "created": "Successfully created the task!",
+      "deleted": "Successfully deleted the task!",
+      "errors": "There are errors in the form!"
+    },
+    "table": {
+      "header": {
+        "title": "Title",
+        "description": "Description",
+        "status": "Status",
+        "actions": "Actions"
+      }
+    },
+    "edit": {
+      "dialog": {
+        "title": "Edit task"
+      }
+    },
+    "form": {
+      "title": "Task details",
+      "text": "Fill in the task information below",
+      "fields": {
+        "labels": {
+          "title": "Title",
+          "description": "Description",
+          "status": "Status"
+        }
+      },
+      "save": {
+        "button": "Save"
+      }
+    },
+    "enums": {
+      "status": {
+        "PENDING": "Pending",
+        "COMPLETED": "Completed"
+      }
+    },
+    "action-bar": {
+      "delete": "Delete all"
+    }
+  }
+}

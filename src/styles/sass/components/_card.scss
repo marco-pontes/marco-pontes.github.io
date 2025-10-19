@@ -1,0 +1,220 @@
+@use "../abstracts/mixins";
+@use "../abstracts/variables";
+
+.card {
+  perspective: 150rem;
+  position: relative;
+  height: 52rem;
+
+  &__side {
+    height: 52rem;
+    border-radius: 3px;
+    transition: all 0.8s ease;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0 1.5rem 4rem rgba(variables.$color-black, 0.15);
+    overflow: hidden;
+
+    &--front {
+      background-color: variables.$color-white;
+    }
+    &--back {
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(
+          to right bottom,
+          variables.$color-secondary-light,
+          variables.$color-secondary-dark
+        );
+      }
+
+      &-2 {
+        background-image: linear-gradient(
+          to right bottom,
+          variables.$color-primary-light,
+          variables.$color-primary-dark
+        );
+      }
+
+      &-3 {
+        background-image: linear-gradient(
+          to right bottom,
+          variables.$color-tertiary-light,
+          variables.$color-tertiary-dark
+        );
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+  }
+
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+    &--1 {
+      background-image: linear-gradient(
+          to right bottom,
+          variables.$color-secondary-light,
+          variables.$color-secondary-dark
+        ),
+        url("/images/nat-5.jpg");
+    }
+
+    &--2 {
+      background-image: linear-gradient(to right bottom, variables.$color-primary-light, variables.$color-primary-dark),
+        url("/images/nat-6.jpg");
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+          to right bottom,
+          variables.$color-tertiary-light,
+          variables.$color-tertiary-dark
+        ),
+        url("/images/nat-7.jpg");
+    }
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    font-weight: 300;
+    text-transform: uppercase;
+    text-align: right;
+    color: variables.$color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    width: 75%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    -webkit-box-decoration-break: clone;
+
+    &--1 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(variables.$color-secondary-light, 0.85),
+        rgba(variables.$color-secondary-dark, 0.85)
+      );
+    }
+
+    &--2 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(variables.$color-primary-light, 0.85),
+        rgba(variables.$color-primary-dark, 0.85)
+      );
+    }
+
+    &--3 {
+      background-image: linear-gradient(
+        to right bottom,
+        rgba(variables.$color-tertiary-light, 0.85),
+        rgba(variables.$color-tertiary-dark, 0.85)
+      );
+    }
+  }
+
+  &__details {
+    padding: 3rem;
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: 0 auto;
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid variables.$color-grey-light-2;
+        }
+      }
+    }
+  }
+
+  &__cta {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    text-align: center;
+  }
+
+  &__price-box {
+    text-align: center;
+    color: variables.$color-white;
+    margin-bottom: 8rem;
+  }
+
+  &__price-only {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+  }
+
+  &__price-value {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+
+  @include mixins.query(tab-port-no-hover) {
+    height: auto;
+    border-radius: 3px;
+    background-color: variables.$color-white;
+    box-shadow: 0 1.5rem 4rem rgba(variables.$color-black, 0.15);
+
+    &__side {
+      height: auto;
+      position: relative;
+      border-radius: 0;
+      box-shadow: none;
+
+      &--back {
+        transform: rotateY(0);
+        clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+      }
+    }
+
+    &__details {
+      padding: 1rem 3rem;
+    }
+
+    &:hover &__side--front {
+      transform: rotateY(0);
+    }
+
+    &__cta {
+      position: relative;
+      top: 0;
+      left: 0;
+      transform: translate(0);
+      width: 100%;
+      padding: 7rem 4rem 4rem 4rem;
+    }
+
+    &__price-box {
+      margin-bottom: 3rem;
+    }
+
+    &__price-value {
+      font-size: 4rem;
+    }
+  }
+}

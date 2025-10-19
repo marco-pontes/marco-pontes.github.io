@@ -1,0 +1,46 @@
+{
+  "todos": {
+    "messages": {
+      "updated": "¡Tarea actualizada con éxito!",
+      "created": "¡Tarea creada con éxito!",
+      "deleted": "¡Tarea eliminada con éxito!",
+      "errors": "¡Hay errores en el formulario!"
+    },
+    "table": {
+      "header": {
+        "title": "Título",
+        "description": "Descripción",
+        "status": "Estado",
+        "actions": "Acciones"
+      }
+    },
+    "edit": {
+      "dialog": {
+        "title": "Editar tarea"
+      }
+    },
+    "form": {
+      "title": "Detalles de la tarea",
+      "text": "Complete la información de la tarea a continuación",
+      "fields": {
+        "labels": {
+          "title": "Título",
+          "description": "Descripción",
+          "status": "Estado"
+        }
+      },
+      "save": {
+        "button": "Guardar"
+      }
+    },
+    "enums": {
+      "status": {
+        "PENDING": "Pendiente",
+        "COMPLETED": "Completada"
+      }
+    },
+    "action-bar": {
+      "delete": "Eliminar todas"
+    }
+  }
+}

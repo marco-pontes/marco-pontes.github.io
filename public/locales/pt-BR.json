@@ -1,0 +1,46 @@
+{
+  "todos": {
+    "messages": {
+      "updated": "Sucesso ao atualizar tarefa!",
+      "created": "Sucesso ao criar tarefa!",
+      "deleted": "Sucesso ao apagar tarefa!",
+      "errors": "Existem erros no formulário!"
+    },
+    "table": {
+      "header": {
+        "title": "Título",
+        "description": "Descrição",
+        "status": "Status",
+        "actions": "Ações"
+      }
+    },
+    "edit": {
+      "dialog": {
+        "title": "Editar tarefa"
+      }
+    },
+    "form": {
+      "title": "Detalhes da tarefa",
+      "text": "Preencha as informações da tarefa abaixo",
+      "fields": {
+        "labels": {
+          "title": "Título",
+          "description": "Descrição",
+          "status": "Status"
+        }
+      },
+      "save": {
+        "button": "Salvar"
+      }
+    },
+    "enums": {
+      "status": {
+        "PENDING": "Pendente",
+        "COMPLETED": "Concluída"
+      }
+    },
+    "action-bar": {
+      "delete": "Apagar todas"
+    }
+  }
+}
