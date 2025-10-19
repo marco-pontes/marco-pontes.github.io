@@ -1,32 +1,27 @@
+import videoMp4 from "../assets/images/video.mp4";
+import videoWebm from "../assets/images/video.webm";
+import nat8 from "../assets/images/nat-8.jpg";
+import nat9 from "../assets/images/nat-9.jpg";
+import { t } from "i18next";
 import type { FunctionComponent } from "@/types/types.ts";
-import Image from "next/image";
-import { memo } from "react";
 
-export const Stories = memo(function Stories(): FunctionComponent {
-	//const t = useTranslations("Stories");
-	console.count("Stories Renders");
+export const Stories = (): FunctionComponent => {
 	return (
 		<section className="section-stories">
 			<div className="bg-video">
 				<video autoPlay loop muted className="bg-video__content">
-					<source src="/images/video.mp4" type="video/mp4" />
-					<source src="/images/video.webm" type="video/webm" />
+					<source src={videoMp4} type="video/mp4" />
+					<source src={videoWebm} type="video/webm" />
 					Your browser is not supported
 				</video>
 			</div>
 			<div className="u-center-text u-margin-bottom-big">
-				<h2 className="heading-secondary">{/*t("stories.title")*/}</h2>
+				<h2 className="heading-secondary">{t("stories.title")}</h2>
 			</div>
 			<div className="row">
 				<div className="story">
 					<figure className="story__shape">
-						<Image
-							alt="Person on a tour"
-							className="story__image"
-							src="/images/nat-8.jpg"
-							width={400}
-							height={400}
-						/>
+						<img alt="Person on a tour" className="story__image" src={nat8} />
 						<figcaption className="story__caption">Mary Smith</figcaption>
 					</figure>
 					<div className="story__text">
@@ -46,13 +41,7 @@ export const Stories = memo(function Stories(): FunctionComponent {
 			<div className="row">
 				<div className="story">
 					<figure className="story__shape">
-						<Image
-							alt="Person on a tour"
-							className="story__image"
-							src="/images/nat-9.jpg"
-							width={400}
-							height={400}
-						/>
+						<img alt="Person on a tour" className="story__image" src={nat9} />
 						<figcaption className="story__caption">Jack Wilson</figcaption>
 					</figure>
 					<div className="story__text">
@@ -76,4 +65,4 @@ export const Stories = memo(function Stories(): FunctionComponent {
 			</div>
 		</section>
 	);
-});
+};

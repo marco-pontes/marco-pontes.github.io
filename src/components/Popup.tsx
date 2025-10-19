@@ -1,24 +1,19 @@
 import type { FunctionComponent } from "@/types/types.ts";
-import Image from "next/image";
 
 export const Modal = (): FunctionComponent => {
 	return (
 		<div className="popup" id="popup">
 			<div className="popup__content">
 				<div className="popup__left">
-					<Image
+					<img
 						alt="Tour photo"
 						className="popup__img"
-						src="/images/nat-8.jpg"
-						width={400}
-						height={400}
+						src="src/assets/images/nat-8.jpg"
 					/>
-					<Image
+					<img
 						alt="Tour photo"
 						className="popup__img"
-						src="/images/nat-9.jpg"
-						width={400}
-						height={400}
+						src="src/assets/images/nat-9.jpg"
 					/>
 				</div>
 				<div className="popup__right">

@@ -1,6 +1,11 @@
-import Image from "next/image";
-import React from "react";
-import { FunctionComponent } from "@/types/types";
+import reactLogo from "../assets/images/react.svg";
+import logoGreenSmall1x from "../assets/images/logo-side-1x.png";
+import logoGreenSmall2x from "../assets/images/logo-side-4x.png";
+import logoWhite1x from "../assets/images/marco-logo-1x.png";
+import logoWhite2x from "../assets/images/marco-logo-white-4x.png";
+
+import viteLogo from "/vite.svg";
+import type { FunctionComponent } from "@/types/types.ts";
 
 export const Footer = (): FunctionComponent => {
 	return (
@@ -18,43 +23,21 @@ export const Footer = (): FunctionComponent => {
 				<picture className="footer__logo">
 					<source
 						media="(max-width: 37.5em)"
-						srcSet={`/images/logo-side-1x.png 1x, /images/logo-side-2x.png 2x`}
+						srcSet={`${logoGreenSmall1x} 1x, ${logoGreenSmall2x} 2x`}
 					/>
-					<Image
+					<img
 						alt="Full logo"
 						className="footer__logo"
-						src="/images/marco-logo-white-4x.png"
-						width={200}
-						height={200}
+						src={logoWhite2x}
+						srcSet={`${logoWhite1x} 1x, ${logoWhite2x} 2x`}
 					/>
 				</picture>
 				<div>
 					<a href="https://vite.dev" target="_blank">
-						<Image
-							alt="Vite logo"
-							className="tech-logos"
-							src="/images/vite.svg"
-							width={36}
-							height={32}
-						/>
+						<img alt="Vite logo" className="tech-logos" src={viteLogo} />
 					</a>
 					<a href="https://react.dev" target="_blank">
-						<Image
-							alt="React logo"
-							className="tech-logos"
-							src="images/react.svg"
-							width={36}
-							height={32}
-						/>
-					</a>
-					<a href="https://nextjs.org/" target="_blank">
-						<Image
-							alt="Next logo"
-							className="tech-logos"
-							src="images/next.svg"
-							width={36}
-							height={32}
-						/>
+						<img alt="React logo" className="tech-logos" src={reactLogo} />
 					</a>
 				</div>
 			</div>

@@ -1,28 +1,22 @@
-import Image from "next/image";
-import React from "react";
-import { FunctionComponent } from "@/types/types";
+import logoWhite from "../assets/images/logo-white-4x.png";
+import logoWhite1x from "../assets/images/marco-aurelio-1x.png";
+import logoWhite2x from "../assets/images/marco-aurelio-4x.png";
+import type { FunctionComponent } from "@/types/types.ts";
 
 export const Header = (): FunctionComponent => {
 	return (
 		<header className="header">
 			<div className="header__logo-box">
-				<Image
-					className="header__logo"
-					src="/images/logo-4x.png"
-					width={37}
-					height={35}
-					alt="Logo"
-					priority
-				/>
+				<img alt="Logo" className="header__logo" src={logoWhite} />
 			</div>
 			<div className="header__text-box">
 				<h1 className="heading-primary">
 					<span className="heading-primary--main">
-						<Image
+						<img
 							alt="Full logo"
-							src="/images/marco-aurelio-4x.png"
-							width={500}
-							height={150}
+							className="header__full-logo"
+							src={logoWhite2x}
+							srcSet={`${logoWhite1x} 1x, ${logoWhite2x} 2x`}
 						/>
 					</span>
 					<span className="heading-primary--sub">

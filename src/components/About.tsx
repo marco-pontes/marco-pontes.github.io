@@ -1,10 +1,12 @@
+import nat1 from "../assets/images/nat-1.jpg";
+import nat1Large from "../assets/images/nat-1-large.jpg";
+import nat2 from "../assets/images/nat-2.jpg";
+import nat2Large from "../assets/images/nat-2-large.jpg";
+import nat3 from "../assets/images/nat-3.jpg";
+import nat3Large from "../assets/images/nat-3-large.jpg";
 import type { FunctionComponent } from "@/types/types.ts";
-import Image from "next/image";
-import { memo } from "react";
 
-export const About = memo(function About(): FunctionComponent {
-	console.count("About Renders");
-
+export const About = (): FunctionComponent => {
 	return (
 		<section className="section-about">
 			<div className="u-center-text u-margin-bottom-big">
@@ -16,7 +18,7 @@ export const About = memo(function About(): FunctionComponent {
 			<div className="row">
 				<div className="col-1-of-2">
 					<h3 className="heading-tertiary u-margin-bottom-small">
-						Youre going to fall in love with nature
+						You're going to fall in love with nature
 					</h3>
 					<p className="paragraph">
 						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci
@@ -40,33 +42,30 @@ export const About = memo(function About(): FunctionComponent {
 				</div>
 				<div className="col-1-of-2">
 					<div className="composition">
-						<Image
+						<img
 							alt="Photo 1"
 							className="composition__photo composition__photo--p1"
 							sizes="(max-width: 37.5em) 20vw, (max-width: 56.25em) 30vw, 300px"
-							src="/images/nat-1-large.jpg"
-							width={200}
-							height={200}
+							src={nat1Large}
+							srcSet={`${nat1} 300w, ${nat1Large} 1000w`}
 						/>
-						<Image
+						<img
 							alt="Photo 2"
 							className="composition__photo composition__photo--p2"
 							sizes="(max-width: 37.5em) 20vw, (max-width: 56.25em) 30vw, 300px"
-							src="/images/nat-2-large.jpg"
-							width={200}
-							height={200}
+							src={nat2Large}
+							srcSet={`${nat2} 300w, ${nat2Large} 1000w`}
 						/>
-						<Image
+						<img
 							alt="Photo 3"
 							className="composition__photo composition__photo--p3"
 							sizes="(max-width: 37.5em) 20vw, (max-width: 56.25em) 30vw, 300px"
-							src="/images/nat-3-large.jpg"
-							width={200}
-							height={200}
+							src={nat3Large}
+							srcSet={`${nat3} 300w, ${nat3Large} 1000w`}
 						/>
 					</div>
 				</div>
 			</div>
 		</section>
 	);
-});
+};
