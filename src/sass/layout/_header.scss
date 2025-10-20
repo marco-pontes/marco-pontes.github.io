@@ -30,11 +30,6 @@
       url("../../assets/images/hero.jpg");
   }
 
-  @include mixins.query(phone) {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
-  }
-
   &__logo-box {
     position: absolute;
     top: 4rem;
@@ -56,5 +51,17 @@
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+  }
+
+  @include mixins.query(phone) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    &__full-logo {
+      width:100%;
+    }
+    &__text-box {
+      left: 40%;
+      transform: translate(-33%, -50%);
+    }
   }
 }

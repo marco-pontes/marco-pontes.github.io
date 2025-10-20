@@ -76,6 +76,25 @@ body {
   text-transform: uppercase;
 }
 
+.gradient-text {
+  /* Set the font size for the H1 */
+  font-weight: bold; /* Optional: for bolder text */
+
+  /* Apply the linear gradient as a background image */
+  background-image: linear-gradient(to right, #ff7e5f, #feb47b, #ffb347); /* Adjust colors as desired */
+
+  /* Clip the background to the shape of the text */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Make the text transparent to reveal the background gradient */
+  -webkit-text-fill-color: transparent;
+  color: transparent; /* Fallback for non-webkit browsers */
+
+  /* Optional: Ensure the gradient spans the text correctly */
+  display: inline-block;
+}
+
 .paragraph {
   font-size: variables.$default-font-size;
 
